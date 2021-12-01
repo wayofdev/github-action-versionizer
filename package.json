@@ -1,0 +1,27 @@
+{
+    "name": "github-action-versionizer",
+    "version": "1.0.0",
+    "repository": {
+        "url": "https://github.com/wayofdev/github-action-versionizer.git"
+    },
+    "description": "Gets latest git tag out of github repository.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "export SET NODE_OPTIONS=--openssl-legacy-provider && ncc build src/index.ts",
+        "pre-commit": "npm run build && git add dist/."
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "@actions/core": "^1.6.0",
+        "@actions/github": "^5.0.0",
+        "@octokit/webhooks": "^9.20.0",
+        "dotenv": "^10.0.0",
+        "typescript": "^4.5.2"
+    },
+    "devDependencies": {
+        "pre-commit": "^1.2.2"
+    }
+}
